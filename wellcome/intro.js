@@ -9,7 +9,7 @@ export default class Intro extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{color: '#5FDFFA', fontWeight: 'bold', fontSize: 20, marginBottom: 50}}>WELLCOME TO MY APP</Text>
+        <Text style={{color: '#5FDFFA', fontWeight: 'bold', fontSize: 20, marginBottom: 50, marginTop: 100}}>WELLCOME TO MY APP</Text>
         <Image
             style={styles.tinyLogo}
             source={require('./img/login.png')}
