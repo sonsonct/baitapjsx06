@@ -7,17 +7,24 @@ import { TouchableOpacity } from 'react-native-web';
 
 export default class Intro extends Component {
   render() {
+    const {navigation} = this.props
     return (
       <View style={styles.container}>
-        <Text style={{color: '#5FDFFA', fontWeight: 'bold', fontSize: 20, marginBottom: 50}}>WELLCOME TO MY APP</Text>
+        <Text style={{color: '#5FDFFA', fontWeight: 'bold', fontSize: 20, marginBottom: 50, marginTop: 100}}>WELLCOME TO MY APP</Text>
         <Image
             style={styles.tinyLogo}
             source={require('./img/login.png')}
         />
-        <TouchableOpacity style={styles.login}>
+        <TouchableOpacity 
+          style={styles.login}
+          onPress={()=>{navigation.navigate('Signin')}}
+        >
             <Text style={{color: '#fff', fontWeight: 'bold'}}>Log in</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.singup}>
+        <TouchableOpacity 
+          style={styles.singup}
+          onPress={()=>{navigation.navigate('Signup')}}  
+        >
             <Text style={{color: '#5FDFFA', fontWeight: 'bold'}}>Sign up</Text>
         </TouchableOpacity>
       </View>

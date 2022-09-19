@@ -1,11 +1,23 @@
 import React, { Component } from 'react'
-import { Text, View , StyleSheet, TextInput, TouchableOpacity} from 'react-native'
+import { Text, View , StyleSheet, TextInput, TouchableOpacity, Image} from 'react-native'
 
 export default class Signin extends Component {
   render() {
+    const {navigation} = this.props
     return (
       <View style={ styles.container}>
-        <Text style={{fontWeight: 'bold', fontSize:20, color:'#5FDFFA', marginHorizontal: 10, marginVertical: 40}}>SIGN IN</Text>
+        <View style={{flexDirection: 'row'}}>
+          <TouchableOpacity
+            onPress={()=>{navigation.goBack()}}
+          >
+            <Image
+              source={require('./img/backicon.png')}
+              style={{width: 50, height: 50, marginVertical: 30}}
+            />
+          </TouchableOpacity>
+          <Text style={{fontWeight: 'bold', fontSize:20, color:'#5FDFFA', marginHorizontal: 10, marginVertical: 40}}>SIGN IN</Text>
+        </View>
+        
         <View style={{flex: 1, justifyContent:'center', alignItems:'center'}}>
             <TextInput
                 style={styles.input}
